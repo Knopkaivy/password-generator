@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Generator = (props) => {
   const [numChars, setNumChars] = useState(8);
-  const [pass, setPass] = useState([]);
+  const [pass, setPass] = useState(['Password']);
   const upper = [
     'A',
     'B',
@@ -126,8 +126,9 @@ const Generator = (props) => {
   };
   return (
     <div>
-      <h1>I'm a password generator component</h1>
-      <label htmlFor="charsInput">Password length</label>
+      <h1>Random Password Generator</h1>
+      <div className="result">{pass}</div>
+      {/* <label htmlFor="charsInput">Password length</label> */}
       <input
         id="charsInput"
         type="number"
@@ -137,7 +138,6 @@ const Generator = (props) => {
         onChange={(event) => setNumChars(event.target.value)}
       />
       <button onClick={updatePass}>Generate</button>
-      <div>{pass}</div>
     </div>
   );
 };

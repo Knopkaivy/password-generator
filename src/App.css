@@ -1,8 +1,10 @@
 ::selection {
-  background: #c3110e; /* WebKit/Blink Browsers */
+  background: #c3110e;
+  color: white;
 }
 ::-moz-selection {
-  background: #c3110e; /* Gecko Browsers */
+  background: #c3110e;
+  color: white;
 }
 
 body {
@@ -23,7 +25,7 @@ body {
 h1 {
   color: #3488bb;
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: 500;
   margin: 2rem;
 }
 .result {
@@ -33,12 +35,7 @@ h1 {
   height: 48px;
   margin: 1rem;
 }
-::selection {
-  background: #ffb7b7; /* WebKit/Blink Browsers */
-}
-::-moz-selection {
-  background: #ffb7b7; /* Gecko Browsers */
-}
+
 input,
 button {
   background-color: #dbf6ff;
@@ -58,4 +55,28 @@ button:focus {
   outline: none;
 }
 button {
+}
+
+@media screen and (max-width: 598px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 448px) {
+  body {
+    overflow: scroll;
+  }
+  .bgImageContainer {
+    display: none;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  .result {
+    margin-top: 40vh;
+  }
+  input,
+  button {
+    width: 80vw;
+  }
 }

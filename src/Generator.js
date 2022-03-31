@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const Generator = (props) => {
-  const [numChars, setNumChars] = useState(8);
+  const [numChars, setNumChars] = useState(12);
   const [pass, setPass] = useState(['Password']);
+  const [copied, setCopied] = useState(false);
+
   const upper = [
     'A',
     'B',
@@ -110,12 +113,20 @@ const Generator = (props) => {
   };
 
   const generatePass = () => {
+    let num;
+    if (numChars < 8) {
+      num = 8;
+    } else if (numChars > 20) {
+      num = 20;
+    } else {
+      num = numChars;
+    }
     const newPassArray = [];
     newPassArray.push(generateChar(upper));
     newPassArray.push(generateChar(lower));
     newPassArray.push(generateChar(nums));
     newPassArray.push(generateChar(specials));
-    while (newPassArray.length < numChars) {
+    while (newPassArray.length < num) {
       newPassArray.push(generateChar(allChars));
     }
     return shuffle(newPassArray).join('');
@@ -124,11 +135,30 @@ const Generator = (props) => {
   const updatePass = () => {
     return setPass(generatePass());
   };
+
+  const updateNumChars = (numChars) => {
+    let num;
+    if (numChars < 8) {
+      num = 8;
+    } else if (numChars > 20) {
+      num = 20;
+    } else {
+      num = numChars;
+    }
+    console.log('setting to ', num);
+    setNumChars(num);
+  };
+
+  const showCopyMessage = () => {
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1000);
+  };
   return (
-    <div>
+    <div className="generator">
       <h1>Random Password Generator</h1>
-      <div className="result">{pass}</div>
-      {/* <label htmlFor="charsInput">Password length</label> */}
+      <CopyToClipboard text={pass} onCopy={showCopyMessage}>
+        <div className="result">{copied ? 'Copied!' : pass}</div>
+      </CopyToClipboard>
       <input
         id="charsInput"
         type="number"

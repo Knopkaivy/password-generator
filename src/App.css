@@ -1,52 +1,77 @@
+:root {
+  --color-red: #c3110e;
+  --color-blue: #3488bb;
+  --color-blue-light: #dbf6ff;
+  --color-beige: #cea894;
+  --color-brown: #4a2414;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
 ::selection {
-  background: #c3110e;
+  background: var(--color-red);
   color: white;
 }
 ::-moz-selection {
-  background: #c3110e;
+  background: var(--color-red);
   color: white;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
 }
 
 body {
   background-color: rgba(255, 216, 165, 0.4);
   font-family: 'Red Hat Display', sans-serif;
-  overflow: hidden;
+  height: 100vh;
+  line-height: 1.6;
 }
 .App {
   text-align: center;
+  height: 100vh;
 }
 .bgImageContainer {
-  background: #cea894
+  background: var(--color-beige)
     url('https://images.unsplash.com/photo-1521996240847-20cdba641bdf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80')
     center center / cover no-repeat;
   width: 100vw;
   height: 67vh;
 }
+.generator {
+  min-height: 33vh;
+  padding: 1.6rem;
+  box-shadow: 0px -7px 10px 0px rgba(0, 0, 0, 0.19);
+}
 h1 {
-  color: #3488bb;
-  font-size: 2.5rem;
+  color: var(--color-blue);
+  font-size: 4rem;
   font-weight: 500;
-  margin: 2rem;
+  margin: 3.2rem;
 }
 .result {
-  color: #c3110e;
-  font-size: 2rem;
+  color: var(--color-red);
+  font-size: 3.2rem;
   font-weight: 500;
   height: 48px;
-  margin: 1rem;
+  margin: 1.6rem;
 }
 
 input,
 button {
-  background-color: #dbf6ff;
-  color: #4a2414;
+  background-color: var(--color-blue-light);
+  color: var(--color-brown);
   width: 200px;
   height: 48px;
   padding: 0;
   font-family: inherit;
-  font-size: 1.5rem;
+  font-size: 2.4rem;
   text-align: center;
-  margin: 1rem;
+  margin: 1.6rem;
   border-radius: 4px;
   border: none;
 }
@@ -54,17 +79,18 @@ input:focus,
 button:focus {
   outline: none;
 }
-button {
-}
 
 @media screen and (max-width: 598px) {
   html {
-    font-size: 12px;
+    font-size: 50%;
   }
 }
 @media screen and (max-width: 448px) {
   body {
     overflow: scroll;
+  }
+  .generator {
+    height: 100vh;
   }
   .bgImageContainer {
     display: none;

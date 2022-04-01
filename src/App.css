@@ -28,22 +28,34 @@ html {
 body {
   background-color: rgba(255, 216, 165, 0.4);
   font-family: 'Red Hat Display', sans-serif;
+  width: 100vw;
   height: 100vh;
   line-height: 1.6;
 }
 .App {
   text-align: center;
+  width: 100vw;
   height: 100vh;
 }
 .bgImageContainer {
   background: var(--color-beige)
     url('https://images.unsplash.com/photo-1521996240847-20cdba641bdf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80')
     center center / cover no-repeat;
+  /* background-color: var(--color-beige); */
+  /* width: 100%; */
   width: 100vw;
   height: 67vh;
+  max-height: calc(100vh - 300px);
+  overflow: hidden;
 }
+/* .img {
+  height: 100%;
+  vertical-align: bottom;
+  display: inline-block;
+} */
 .generator {
-  min-height: 33vh;
+  height: 33vh;
+  min-height: 300px;
   padding: 1.6rem;
   box-shadow: 0px -7px 10px 0px rgba(0, 0, 0, 0.19);
 }

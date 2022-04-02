@@ -38,8 +38,7 @@ body {
   height: 100vh;
 }
 .bgImageContainer {
-  background: url('https://images.unsplash.com/photo-1521996240847-20cdba641bdf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80')
-    center center / cover no-repeat;
+  background: url('img/bg.jpeg') center center / cover no-repeat;
   width: 100vw;
   height: 67vh;
   max-height: calc(100vh - 300px);

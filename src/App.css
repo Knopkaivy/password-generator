@@ -1,7 +1,8 @@
 :root {
   --color-red: #c3110e;
   --color-blue: #3488bb;
-  --color-blue-light: #dbf6ff;
+  --color-blue-light: #cceffa;
+  --color-blue-light-2: #c6eefa;
   --color-beige: #cea894;
   --color-brown: #4a2414;
 }
@@ -40,12 +41,12 @@ body {
 .bgImageContainer {
   background: url('img/bg.jpeg') center center / cover no-repeat;
   width: 100vw;
-  height: 67vh;
+  height: 60vh;
   max-height: calc(100vh - 300px);
   overflow: hidden;
 }
 .generator {
-  height: 33vh;
+  height: 40vh;
   min-height: 300px;
   padding: 1.6rem;
   box-shadow: 0px -7px 10px 0px rgba(0, 0, 0, 0.19);
@@ -54,7 +55,7 @@ h1 {
   color: var(--color-blue);
   font-size: 4rem;
   font-weight: 500;
-  margin: 3.2rem;
+  margin: 2.4rem;
 }
 .result {
   color: var(--color-red);
@@ -67,6 +68,7 @@ h1 {
 input,
 button {
   background-color: var(--color-blue-light);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
   color: var(--color-brown);
   width: 200px;
   height: 48px;
@@ -74,13 +76,24 @@ button {
   font-family: inherit;
   font-size: 2.4rem;
   text-align: center;
-  margin: 1.6rem;
+  margin: 1.6rem 2.4rem;
   border-radius: 4px;
   border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+input:hover,
+button:hover {
+  outline: none;
+  background-color: var(--color-blue-light-2);
 }
 input:focus,
 button:focus {
   outline: none;
+}
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (max-width: 598px) {

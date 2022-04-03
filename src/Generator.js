@@ -159,15 +159,17 @@ const Generator = (props) => {
       <CopyToClipboard text={pass} onCopy={showCopyMessage}>
         <div className="result">{copied ? 'Copied!' : pass}</div>
       </CopyToClipboard>
-      <input
-        id="charsInput"
-        type="number"
-        min="8"
-        max="20"
-        value={numChars}
-        onChange={(event) => setNumChars(event.target.value)}
-      />
-      <button onClick={updatePass}>Generate</button>
+      <div className="controls">
+        <input
+          id="charsInput"
+          type="number"
+          min="8"
+          max="20"
+          value={numChars}
+          onChange={(event) => setNumChars(event.target.value)}
+        />
+        <button onClick={updatePass}>Generate</button>
+      </div>
     </div>
   );
 };
